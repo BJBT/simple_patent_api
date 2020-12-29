@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\PatentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Patent;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//Patent Route
+Route::resource('patents', PatentController::class);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
